@@ -1,0 +1,53 @@
+body {
+  width: 100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: rgb(128,233,83);
+  background: radial-gradient(circle, rgba(128,233,83,1) 0%, rgba(110,203,71,1) 50%);
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.pageWrapper {
+  color: white;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+}
+
+.pageWrapper h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+.pageWrapper p {
+  font-size: 1.3rem;
+}
+
+.buttonContainer {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  grid-row-gap: 20px;
+}
+
+.buttonContainer button {
+  border: 1px solid  #ff8321;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  height: auto;
+  margin: auto;
+  background-color: #ff8321;
+  color: white;
+  padding: 10px 20px;
+}
+
+.buttonContainer button:hover {
+  background-color: white;
+  border: 1px solid #ff8321;
+  color: #ff8321;
+  cursor: pointer;
+}
+
+form {
+  margin:auto;
+}
