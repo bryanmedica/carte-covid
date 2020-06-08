@@ -1,31 +1,31 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var QRCode = require('qrcode')
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const QRCode = require('qrcode');
+
 var app = express();
 var multer = require('multer');
+
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    console.log(cb);
-    cb(null,  __dirname + '/images/upload');
+    cb(null,  __dirname + '/images/cartes');
   },
   filename: function(req, file, cb) {
-    cb(null, file.originalname);
+    if (file.mimetype === 'image/jpeg') {
+      req.fileName = req.body.restaurantName + ".jpg";
+      cb(null, req.fileName);
+    }
+    else if (file.mimetype ==='image/png') {
+      req.fileName = req.body.restaurantName + ".png";
+      cb(null, req.fileName);
+    }
   }
 });
 
-var fileFilter = (req, file, cb) => {
-  if (file.mimetype === 'image/jpeg' || file.mimetype ==='image/png')
-    cb(null, true);
-  else
-    cb(null, false);
-};
-
 var upload = multer({
-  storage : storage,
-  fileFilter : fileFilter
+  storage : storage
 });
 
 // view engine setup
@@ -36,6 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'images')));
 app.use(express.static(path.join(__dirname, 'views')));
 
 app.get('/', function(req, res, next) {
@@ -43,10 +44,6 @@ app.get('/', function(req, res, next) {
 });
 
 app.get('/publish', function(req, res, next) {
-  console.log("here2");
-  // QRCode.toString('I am a pony!',{type:'terminal'}, function (err, url) {
-  //   console.log(url);
-  // })
   res.sendFile(__dirname + "/views/publish.html");
 });
 
@@ -55,11 +52,20 @@ app.get('/retreive', function(req, res, next) {
   res.sendFile(__dirname + "/views/retreive.html");
 });
 
-app.post('/upload', upload.single('photo'), (req, res) => {
+app.get('/qrcode', function(req, res, next) {
+  res.sendFile(__dirname + "/views/qrcode.html");
+});
+
+app.post('/upload', upload.single('photo'), function(req, res){
   if (req.file) {
-      res.json(req.file);
+    QRCode.toFile(__dirname + "/images/qrcode/" + req.fileName, "http://localhost:3000/cartes/" + req.fileName, {
+    }, function (err) {
+        res.redirect("/qrcode?file=http://localhost:3000/qrcode/" + req.fileName);
+    });
   }
-  else throw 'error';
+  else {
+    res.json({"error" : "No file"});
+  }
 });
 
 module.exports = app;
