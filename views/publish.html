@@ -1,19 +1,23 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/publish.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0, 
+    maximum-scale=1.0, user-scalable=no" /> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/publish.js"></script>
   </head>
   <body>
-    <h1></h1>
-    <p></p>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-      <input type="text" placeholder="Nom de votre restaurant" name="restaurantName"/>
-      <p>Image de votre carte</p>
-      <input type="file" accept="image/*" name="photo">
-      <input type="submit" value="upload">
-    </form>
+    <h1>Créez votre QR code en important votre image !</h1>
+    <p>Nous vous enverrons ensuite votre QR code qui une fois scanné, affichera votre carte.</p>
+    <div class="formContainer">
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Nom de votre restaurant" name="restaurantName"/>
+        <label>Image de votre carte</label>
+        <input type="file" accept="image/*" name="photo">
+        <input type="submit" value="upload">
+      </form>
+    </div>
   </body>
 </html>

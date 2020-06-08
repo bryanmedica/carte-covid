@@ -1,0 +1,54 @@
+body {
+  background: rgb(128,233,83);
+  background: radial-gradient(circle, rgba(128,233,83,1) 0%, rgba(110,203,71,1) 50%);
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+body h1 {
+  font-size: 2rem;
+  color: white;
+  text-align : center;
+  margin-top: 50px;;
+}
+
+body p {
+  text-align: center;
+  font-size: 1.4rem;
+  color:white;
+}
+
+.formContainer {
+  width : auto;
+  height: auto;
+  margin: auto;
+}
+
+label {
+  display:block;
+  color: white;
+  font-size:0.8rem;
+}
+
+form {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+  max-width: 300px;
+}
+
+input, label {
+  font-size: 1.2rem;
+  display:block;
+}
+
+input[type=text] {
+  padding:8px 14px 8px 4px;
+  border: 1px solid grey;
+  border-radius:12px;
+  margin-bottom: 10px;
+}
+
+input[type=submit] {
+  margin-top: 10px;
+}

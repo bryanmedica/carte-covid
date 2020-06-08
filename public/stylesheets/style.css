@@ -1,5 +1,4 @@
 body {
-  width: 100%;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: rgb(128,233,83);
   background: radial-gradient(circle, rgba(128,233,83,1) 0%, rgba(110,203,71,1) 50%);
@@ -46,8 +45,4 @@ body {
   border: 1px solid #ff8321;
   color: #ff8321;
   cursor: pointer;
-}
-
-form {
-  margin:auto;
 }
