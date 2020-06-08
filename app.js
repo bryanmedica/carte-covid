@@ -5,8 +5,28 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var QRCode = require('qrcode')
 var app = express();
-const multer = require('multer');
-const upload = multer({dest: __dirname + '/images/upload'});
+var multer = require('multer');
+var storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    console.log(cb);
+    cb(null,  __dirname + '/images/upload');
+  },
+  filename: function(req, file, cb) {
+    cb(null, file.originalname);
+  }
+});
+
+var fileFilter = (req, file, cb) => {
+  if (file.mimetype === 'image/jpeg' || file.mimetype ==='image/png')
+    cb(null, true);
+  else
+    cb(null, false);
+};
+
+var upload = multer({
+  storage : storage,
+  fileFilter : fileFilter
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,9 +44,9 @@ app.get('/', function(req, res, next) {
 
 app.get('/publish', function(req, res, next) {
   console.log("here2");
-  QRCode.toString('I am a pony!',{type:'terminal'}, function (err, url) {
-    console.log(url);
-  })
+  // QRCode.toString('I am a pony!',{type:'terminal'}, function (err, url) {
+  //   console.log(url);
+  // })
   res.sendFile(__dirname + "/views/publish.html");
 });
 
@@ -40,22 +60,6 @@ app.post('/upload', upload.single('photo'), (req, res) => {
       res.json(req.file);
   }
   else throw 'error';
-});
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.send('error');
 });
 
 module.exports = app;
