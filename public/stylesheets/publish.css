@@ -1,31 +1,5 @@
-body {
-  background: rgb(27,27,27);
-  background: radial-gradient(circle, rgba(27,27,27,1) 0%, rgba(36,36,36,1) 100%);
-  font-family: 'Roboto', sans-serif;
-  overflow: hidden;
-}
-
-body h1 {
-  font-size: 1.5rem;
-  color: white;
-  margin-top: 120px;
-}
-
-body p {
-  margin-top:30px;
-  font-size: 1.1rem;
-  color:white;
-}
-
-label {
-  display: inline-block;
-  color: white;
-  font-size:0.8rem;
-  margin: 25px 0px 12px 0px;
-}
-
 form {
-  margin-top:20px;
+  margin-top: 20px;
   text-align: left;
   color: white;
 }
@@ -39,17 +13,17 @@ input, label {
 }
 
 input[type=text] {
-  color:white;
-  padding:8px 14px 8px 4px;
-  border:none;
+  color: white;
+  padding: 8px 14px 8px 4px;
+  border: none;
   border-bottom: 1px solid #9ea2af;
   background: transparent;
   margin-bottom: 15px;
-  width:100%;
+  width: 100%;
 }
 
 input[type=text]:focus {
-  border-bottom:2px solid #5f7e96;
+  border-bottom: 2px solid #5f7e96;
   outline-width: 0;
 }
 
@@ -57,7 +31,7 @@ input[type=submit] {
   display: block;
   margin: auto;
   margin-top: 20px;
-  width:40%;
+  width: 40%;
   background-color: #5f7e96;
   border: 1px solid #5f7e96;
   color: white;
@@ -93,7 +67,7 @@ input[type=button] {
 
 @media (max-width: 800px) {
   input[type=submit] {
-    margin:auto;
+    margin: auto;
     margin-top: 20px;
     width: 300px;
   }
@@ -108,17 +82,17 @@ input[type=button]:hover {
 }
 
 .logo {
-  width : 250px;
-  height : auto;
+  width: 250px;
+  height: auto;
   position: absolute;
   top: 10px;
-  left : 0px;
+  left: 0px;
   cursor: pointer;
 }
 
 .publishContainer {
   text-align: left;
   margin: 0 auto;
-  width:max-content;
+  width: max-content;
   max-width: 100%;
 }

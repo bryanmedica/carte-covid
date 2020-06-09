@@ -2,7 +2,6 @@ $(document).ready(function() {
     $('#uploadFile').on("change", function() {
         $("#labelFile").text("Le fichier est prêt !");
         $("#uploadButton").css({"background-color": "rgb(72, 180, 0)", "border-color" : "rgb(72, 180, 0)"})
-        uploadFile();
     });
 
     $("#submitButton").mouseover(function() {

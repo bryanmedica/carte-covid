@@ -1,48 +1,37 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: rgb(128,233,83);
-  background: radial-gradient(circle, rgba(128,233,83,1) 0%, rgba(110,203,71,1) 50%);
+  background: rgb(27,27,27);
+  background: radial-gradient(circle, rgba(27,27,27,1) 0%, rgba(36,36,36,1) 100%);
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
 }
 
-.pageWrapper {
+body h1 {
+  font-size: 1.5rem;
   color: white;
-  text-align: center;
-  width: 100%;
-  overflow: hidden;
+  margin-top: 120px;
 }
 
-.pageWrapper h1 {
-  font-size: 2.8rem;
-  font-weight: bold;
-}
-
-.pageWrapper p {
-  font-size: 1.3rem;
-}
-
-.buttonContainer {
-  display: grid;
-  grid-template-columns: auto;
-  grid-template-rows: auto auto;
-  grid-row-gap: 20px;
-}
-
-.buttonContainer button {
-  border: 1px solid  #ff8321;
-  border-radius: 30px;
-  font-size: 1.3rem;
-  height: auto;
-  margin: auto;
-  background-color: #ff8321;
+body p {
+  margin-top: 30px;
+  font-size: 1.1rem;
   color: white;
-  padding: 10px 20px;
 }
 
-.buttonContainer button:hover {
-  background-color: white;
-  border: 1px solid #ff8321;
-  color: #ff8321;
+label {
+  display: inline-block;
+  color: white;
+  font-size: 0.8rem;
+  margin: 25px 0px 12px 0px;
+}
+
+input[type=button]:focus {
+  outline-width: 0px;
+}
+
+input[type=button]:hover {
+  cursor: pointer;
+}
+
+button:hover {
   cursor: pointer;
 }

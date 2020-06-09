@@ -1,0 +1,19 @@
+button {
+    margin: auto;
+    margin-top: 20px;
+    width: max-content;
+    background-color: #5f7e96;
+    border: 1px solid #5f7e96;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.1s;
+}
+
+.logo {
+    width: 500px;
+    height: auto;
+    cursor: pointer;
+}

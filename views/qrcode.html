@@ -1,15 +1,21 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/qrcode.css"/>
     <link rel="icon" type="image/ico" href="carte-covid.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale = 1.0,
+    maximum-scale=1.0, user-scalable=no" />
+    <title>Carte-Covid</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="/javascripts/qrcode.js"></script>
   </head>
   <body>
-    <p id="restaurant">Voici le QR Cde pour vautre restaurant</p>
-    <img id="qrcode" src="">
-    <button id="#download" onclick="saveQRCode()">Enregistrer le QR Code</button>
+    <div class="qrcodeContainer">
+      <img class="logo" src="/logoCarteCovid.png" alt="Logo Carte-Covid" id="logoCC"/>
+      <h1 id="restaurant">Voici le QR Code pour votre restaurant</h1>
+      <img id="qrcode" src="">
+      <button id="#download" onclick="saveQRCode()">Enregistrer le QR Code</button>
+    </div>
   </body>
 </html>

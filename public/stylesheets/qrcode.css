@@ -1,0 +1,34 @@
+
+button {
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  width: 60%;
+  background-color: #5f7e96;
+  border: 1px solid #5f7e96;
+  color: white;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
+.logo {
+  width: 250px;
+  height: auto;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  cursor: pointer;
+}
+
+.qrcodeContainer {
+  text-align: center;
+  margin: 0 auto;
+  width: max-content;
+  max-width: 100%;
+}
+
+#qrcode {
+  margin: 20px 0;
+}
