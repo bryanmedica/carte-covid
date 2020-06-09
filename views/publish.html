@@ -9,14 +9,16 @@
     <script src="/javascripts/publish.js"></script>
   </head>
   <body>
-    <h1>Créez votre QR code en important votre image !</h1>
-    <p>Nous vous enverrons ensuite votre QR code qui une fois scanné, affichera votre carte.</p>
-    <div class="formContainer">
+    <div class="publishContainer">
+      <img class="logo" src="./logoCarteCovid.png" alt="Logo Carte-Covid" />
+      <h1>Créez votre QR code en important votre image !</h1>
+      <p>Nous vous enverrons ensuite votre QR code qui une fois scanné, affichera votre carte.</p>
       <form action="/publish" method="post" enctype="multipart/form-data">
-        <input type="text" placeholder="Nom de votre restaurant" name="restaurantName"/>
-        <label>Image de votre carte</label>
-        <input type="file" accept="image/*" name="photo">
-        <input type="submit" value="publish">
+        <input id="restaurantName" type="text" placeholder="Nom de votre restaurant" name="restaurantName"/>
+        <label id="labelFile">Chargez votre carte :</label>
+        <input id="uploadFile" type="file" accept="image/*" name="photo">
+        <input id="uploadButton" type="button" onclick="document.getElementById('uploadFile').click();" />
+        <input id="submitButton" type="submit" value="C'est parti !">
       </form>
     </div>
   </body>
