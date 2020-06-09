@@ -5,9 +5,20 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const QRCode = require('qrcode');
 const config = require('./config.json')
+var multer = require('multer');
 
 var app = express();
-var multer = require('multer');
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'images')));
+app.use(express.static(path.join(__dirname, 'views')));
 
 var storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -28,17 +39,6 @@ var storage = multer.diskStorage({
 var upload = multer({
   storage : storage
 });
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'images')));
-app.use(express.static(path.join(__dirname, 'views')));
 
 app.get('/', function(req, res, next) {
   res.sendFile(__dirname + "/views/index.html");
@@ -69,7 +69,6 @@ app.post('/publish', upload.single('photo'), function(req, res) {
 });
 
 app.post('/retreive', upload.none(), function(req, res) {
-  console.log(req.body.menuURL);
   QRCode.toFile(__dirname + "/images/qrcode/" + req.body.restaurantName + ".jpg", req.body.menuURL, {}, function (err) {
       res.redirect("/qrcode?file=" + config.url + "/qrcode/" + req.body.restaurantName + ".jpg&restaurant=" + req.body.restaurantName);
   });
