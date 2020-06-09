@@ -49,7 +49,6 @@ app.get('/publish', function(req, res, next) {
 });
 
 app.get('/retreive', function(req, res, next) {
-  console.log("here3");
   res.sendFile(__dirname + "/views/retreive.html");
 });
 

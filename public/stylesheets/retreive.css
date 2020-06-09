@@ -73,24 +73,6 @@ input[type=submit]:hover {
   transition: 0.2s;
 }
 
-input[type=file] {
-  display: none;
-}
-
-input[type=button] {
-  background: #5f7e96;
-  background-image: url("/download.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  border: 6px solid #5f7e96;
-  border-radius: 5px;
-  width: 45px;
-  height: 35px;
-  vertical-align: middle;
-  margin-left: 5px;
-}
-
 @media (max-width: 800px) {
   input[type=submit] {
     margin:auto;
@@ -116,7 +98,7 @@ input[type=button]:hover {
   cursor: pointer;
 }
 
-.publishContainer {
+.retreiveContainer {
   text-align: left;
   margin: 0 auto;
   width:max-content;

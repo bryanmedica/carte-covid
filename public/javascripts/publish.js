@@ -6,7 +6,7 @@ $(document).ready(function() {
     });
 
     $("#submitButton").mouseover(function() {
-        if ($("#restaurantName").val() == "" || !($("#uploadFile").val()))
+        if ($("#restaurantName").val() === "" || !($("#uploadFile").val()))
             $(this).css({"background-color": "#fc5151", "border-color" : "#fc5151"});
         else
             $(this).css({"background-color": "#48b400", "border-color" : "#48b400"});
@@ -15,7 +15,12 @@ $(document).ready(function() {
     });
 
     $("#submitButton").click(function() {
-        if ($("#restaurantName").val() == "" || !($("#uploadFile").val()))
+        if ($("#restaurantName").val() === "" || !($("#uploadFile").val()))
             event.preventDefault();
     });
+
+    $("#logoCC").click(function() {
+        window.location = "/";
+    });
+
 });

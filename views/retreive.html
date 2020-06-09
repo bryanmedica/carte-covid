@@ -1,16 +1,23 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/retreive.css"/>
     <link rel="icon" type="image/ico" href="carte-covid.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/javascripts/retreive.js"></script>
   </head>
   <body>
-    <form action="/retreive" method="post" enctype="multipart/form-data">
-      <input type="text" placeholder="Nom de votre restaurant" name="restaurantName"/>
-      <input type="text" placeholder="URL de la carte de votre restaurant" name="menuURL"/>
-      <input type="submit" value="retreive">
-    </form>
+    <div class="retreiveContainer">
+      <img class="logo" src="./logoCarteCovid.png" alt="Logo Carte-Covid" id="logoCC"/>
+      <h1>Créez votre QR code en nous renseignant ces deux informations !</h1>
+      <p>Nous vous enverrons ensuite votre QR code qui une fois scanné, affichera votre carte.</p>
+      <form action="/retreive" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Nom de votre restaurant" name="restaurantName" id="restaurantName"/>
+        <input type="text" placeholder="URL de la carte de votre restaurant" name="menuURL" id="menuURL"/>
+        <input id="retreiveButton" type="submit" value="Créez le QR Code !">
+      </form>
+    </div>
   </body>
 </html>
