@@ -12,11 +12,11 @@
     <h1>Créez votre QR code en important votre image !</h1>
     <p>Nous vous enverrons ensuite votre QR code qui une fois scanné, affichera votre carte.</p>
     <div class="formContainer">
-      <form action="/upload" method="post" enctype="multipart/form-data">
+      <form action="/publish" method="post" enctype="multipart/form-data">
         <input type="text" placeholder="Nom de votre restaurant" name="restaurantName"/>
-        <label>Image de votre carte</label>
+        <p>Image de votre carte</p>
         <input type="file" accept="image/*" name="photo">
-        <input type="submit" value="upload">
+        <input type="submit" value="publish">
       </form>
     </div>
   </body>

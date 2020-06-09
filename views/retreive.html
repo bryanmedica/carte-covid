@@ -6,6 +6,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
-    <p>retreive</p>
+    <form action="/retreive" method="post" enctype="multipart/form-data">
+      <input type="text" placeholder="Nom de votre restaurant" name="restaurantName"/>
+      <input type="text" placeholder="URL de la carte de votre restaurant" name="menuURL"/>
+      <input type="submit" value="retreive">
+    </form>
   </body>
 </html>

@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const QRCode = require('qrcode');
+const config = require('./config.json')
 
 var app = express();
 var multer = require('multer');
@@ -56,16 +57,22 @@ app.get('/qrcode', function(req, res, next) {
   res.sendFile(__dirname + "/views/qrcode.html");
 });
 
-app.post('/upload', upload.single('photo'), function(req, res){
+app.post('/publish', upload.single('photo'), function(req, res) {
   if (req.file) {
-    QRCode.toFile(__dirname + "/images/qrcode/" + req.fileName, "http://localhost:3000/cartes/" + req.fileName, {
-    }, function (err) {
-        res.redirect("/qrcode?file=http://localhost:3000/qrcode/" + req.fileName);
+    QRCode.toFile(__dirname + "/images/qrcode/" + req.fileName, config.url + "/cartes/" + req.fileName, {}, function (err) {
+        res.redirect("/qrcode?file=" + config.url + "/qrcode/" + req.fileName + "&restaurant=" + req.body.restaurantName);
     });
   }
   else {
     res.json({"error" : "No file"});
   }
 });
+
+app.post('/retreive', upload.none(), function(req, res) {
+  console.log(req.body.menuURL);
+  QRCode.toFile(__dirname + "/images/qrcode/" + req.body.restaurantName + ".jpg", req.body.menuURL, {}, function (err) {
+      res.redirect("/qrcode?file=" + config.url + "/qrcode/" + req.body.restaurantName + ".jpg&restaurant=" + req.body.restaurantName);
+  });
+})
 
 module.exports = app;
