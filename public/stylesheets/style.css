@@ -35,3 +35,17 @@ input[type=button]:hover {
 button:hover {
   cursor: pointer;
 }
+
+form {
+  margin-top: 20px;
+  text-align: left;
+  color: white;
+}
+
+input::placeholder {
+  color: rgb(199, 199, 199);
+}
+
+input, label {
+  font-size: 1.2rem;
+}

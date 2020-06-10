@@ -1,17 +1,3 @@
-form {
-  margin-top: 20px;
-  text-align: left;
-  color: white;
-}
-
-input::placeholder {
-  color: rgb(199, 199, 199);
-}
-
-input, label {
-  font-size: 1.2rem;
-}
-
 input[type=text] {
   color: white;
   padding: 8px 14px 8px 4px;
