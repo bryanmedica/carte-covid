@@ -4,9 +4,10 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const QRCode = require('qrcode');
-const config = require('./config.json')
-var multer = require('multer');
+const config = require('./config.json');
+const fs = require('fs');
 
+var multer = require('multer');
 var app = express();
 
 // view engine setup
@@ -27,11 +28,33 @@ var storage = multer.diskStorage({
   filename: function(req, file, cb) {
     if (file.mimetype === 'image/jpeg') {
       req.fileName = req.body.restaurantName + ".jpg";
-      cb(null, req.fileName);
+      try {
+        if (fs.existsSync(__dirname + '/images/cartes/' + req.fileName)) {
+          var d = new Date();
+          req.fileName = req.body.restaurantName +  "_" + d.getTime() + ".jpg";
+          cb(null, req.fileName);
+        }
+        else  {
+          cb(null, req.fileName);
+        }
+      } catch(err) {
+        console.error(err)
+      }
     }
     else if (file.mimetype ==='image/png') {
       req.fileName = req.body.restaurantName + ".png";
-      cb(null, req.fileName);
+      try {
+        if (fs.existsSync(__dirname + '/images/cartes/' + req.fileName)) {
+          var d = new Date();
+          req.fileName = req.body.restaurantName +  "_" + d.getTime() + ".png";
+          cb(null, req.fileName);
+        }
+        else  {
+          cb(null, req.fileName);
+        }
+      } catch(err) {
+        console.error(err)
+      }
     }
   }
 });
