@@ -14,8 +14,11 @@ $(document).ready(function() {
     });
 
     $("#submitButton").click(function() {
-        if ($("#restaurantName").val() === "" || !($("#uploadFile").val()))
+        if ($("#restaurantName").val() === "" || !($("#uploadFile").val())) {
+            $("#banner").text("Il manque des informations !");
+            $("#banner").css({display: "block"});
             event.preventDefault();
+        }
     });
 
     $("#logoCC").click(function() {

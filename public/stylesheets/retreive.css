@@ -41,6 +41,19 @@ input[type=submit]:hover {
   }
 }
 
+input[type=text]:-webkit-autofill {
+  background-color: transparent !important;
+}
+
+input[type=text]:-webkit-autofill:hover {
+  background-color: transparent !important;
+}
+
+input[type=text]:-webkit-autofill:focus {
+  background-color: transparent !important;
+}
+
+
 .logo {
   width: 250px;
   height: auto;

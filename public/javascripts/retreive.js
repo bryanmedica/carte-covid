@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#retreiveButton").mouseover(function() {
-        if ($("#retreiveName").val() === "" || $("#menuURL").val() === "")
+        if ($("#restaurantName").val() === "" || $("#menuURL").val() === "")
             $(this).css({"background-color": "#fc5151", "border-color" : "#fc5151"});
         else
             $(this).css({"background-color": "#48b400", "border-color" : "#48b400"});
@@ -9,8 +9,11 @@ $(document).ready(function() {
     });
 
     $("#retreiveButton").click(function() {
-        if ($("#restaurantName").val() === "" || $("#menuURL").val() === "")
+        if ($("#restaurantName").val() === "" || $("#menuURL").val() === "") {
+            $("#banner").text("Il manque des informations !");
+            $("#banner").css({display: "block"});
             event.preventDefault();
+        }
     });
 
     $("#logoCC").click(function() {

@@ -3,6 +3,7 @@ body {
   background: radial-gradient(circle, rgba(27,27,27,1) 0%, rgba(36,36,36,1) 100%);
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
+  margin: 0;
 }
 
 body h1 {
@@ -48,4 +49,21 @@ input::placeholder {
 
 input, label {
   font-size: 1.2rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0px;
+  color: white;
+  border-top: 2px solid #5f7e96;
+  width: 90%;
+  margin: 0px auto;
+  height: 10%;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+#banner {
+  color: #fc5151;
+  display: none;
 }

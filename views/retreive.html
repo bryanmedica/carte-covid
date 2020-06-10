@@ -13,11 +13,12 @@
     <div class="retreiveContainer">
       <img class="logo" src="/logoCarteCovid.png" alt="Logo Carte-Covid" id="logoCC"/>
       <h1>Créez votre QR code en nous renseignant ces deux informations !</h1>
-      <p>Nous vous enverrons ensuite votre QR code qui une fois scanné, affichera votre carte.</p>
+      <p>Nous générerons ensuite votre QR code qui, une fois scanné, affichera votre carte.</p>
+      <p id="banner"></p>
       <form action="/retreive" method="post" enctype="multipart/form-data">
         <input type="text" placeholder="Nom de votre restaurant" name="restaurantName" id="restaurantName"/>
         <input type="text" placeholder="URL de la carte de votre restaurant" name="menuURL" id="menuURL"/>
-        <input id="retreiveButton" type="submit" value="Créez le QR Code !">
+        <input id="retreiveButton" type="submit" value="C'est parti !">
       </form>
     </div>
   </body>
