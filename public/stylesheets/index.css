@@ -16,6 +16,12 @@ button:active {
     outline-width: 0px;
 }
 
+button:hover {
+  background-color: #4d697e;
+  border: 1px solid #4d697e;
+  transition: 0.2s;
+}
+
 .pageContainer {
     text-align: center;
 }
@@ -76,4 +82,21 @@ button:active {
     height: auto;
     margin: auto;
     margin-top: 20px;
+}
+
+.mailIcon {
+  height: 25px;
+  width: auto;
+  position: relative;
+  left: 8px;
+  vertical-align: middle;
+}
+
+.linkedinIcon {
+  height: 25px;
+  width: auto;
+  position: relative;
+  left: 16px;
+  vertical-align: middle;
+  bottom: 3px;
 }

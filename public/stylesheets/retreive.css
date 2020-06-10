@@ -69,3 +69,20 @@ input[type=text]:-webkit-autofill:focus {
   width: max-content;
   max-width: 100%;
 }
+
+.mailIcon {
+  height: 25px;
+  width: auto;
+  position: relative;
+  left: 8px;
+  vertical-align: middle;
+}
+
+.linkedinIcon {
+  height: 25px;
+  width: auto;
+  position: relative;
+  left: 16px;
+  vertical-align: middle;
+  bottom: 3px;
+}
