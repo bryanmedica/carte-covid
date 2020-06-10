@@ -1,7 +1,7 @@
 button {
     margin: auto;
     margin-top: 20px;
-    width: max-content;
+    width: 300px;
     background-color: #5f7e96;
     border: 1px solid #5f7e96;
     color: white;
@@ -12,8 +12,68 @@ button {
     transition: 0.1s;
 }
 
+button:active {
+    outline-width: 0px;
+}
+
+.pageContainer {
+    text-align: center;
+}
+
+.pageContainer p {
+    font-size: 1.5rem;
+}
+
+#headerText {
+    margin-top: 60px;
+    margin-bottom: 10px !important;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
 .logo {
-    width: 500px;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    width: 400px;
     height: auto;
     cursor: pointer;
+}
+
+.schemaContainer {
+    width: max-content;
+    display: grid;
+    grid-template-rows:  auto ;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 40px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.borderLine {
+    margin: 0px auto;
+    border-left: 3px solid white;
+    height: 300px;
+}
+
+.gridTextElem {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+#firstTextElem {
+    margin-top: 40px;
+}
+
+.sideContainer {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto;
+}
+
+.logosSchema {
+    width: 150px;
+    height: auto;
+    margin: auto;
+    margin-top: 20px;
 }

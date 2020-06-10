@@ -12,11 +12,23 @@
   <body>
     <div class="pageContainer">
       <img class="logo" src="/logoCarteCovid.png" alt="Logo Carte-Covid" id="logoCC"/>
-      <p>
-        Numérisez votre carte, et permettez à votre clientièle d'y accéder, via un simple QR code.
+      <p id="headerText">
+        Numérisez votre carte et permettez à votre clientièle d'y accéder, via un simple QR Code.
       </p>
-      <button id="publish">Publier sa carte en ligne</button>
-      <button id="retreive">Récupérer mon QR code</button>
+      <p class="gridTextElem" id="firstTextElem">1. Renseignez le nom de votre restaurant</p>
+      <div class="schemaContainer">
+        <div class="sideContainer">
+          <p class="gridTextElem">2. Envoyez nous une photo de votre carte</p>
+          <img class="logosSchema" src="/camera.png" alt="camera logo"/>
+          <button id="publish">J'ai la photo !</button>
+        </div>
+        <div class="borderLine"></div>
+        <div class="sideContainer">
+          <p class="gridTextElem">2. Envoyez nous le lien vers votre carte</p>
+          <img class="logosSchema" src="/search.png" alt="search logo"/>
+          <button id="retreive">J'ai une URL !</button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
