@@ -92,7 +92,7 @@ input:-webkit-autofill {
     width: 250px;
   }
 
-  h1, p, form {
+  h1.titleHolder, p.textHolder, form {
     padding: 0px 15px;
   }
 

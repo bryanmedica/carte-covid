@@ -100,3 +100,56 @@ button:hover {
   vertical-align: middle;
   bottom: 3px;
 }
+
+@media (max-width: 800px) {
+    body {
+        overflow-y:scroll;
+        padding: 0px 20px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0px;
+    }
+
+    .schemaContainer {
+        width: 300px;
+        display: grid;
+        grid-template-rows:  auto auto auto;
+        grid-template-columns: auto;
+        grid-row-gap: 40px;
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .borderLine {
+        margin: 0px auto;
+        border-left: none;
+        border-bottom: 3px solid white;
+        width: 300px;
+        height: 10px;
+    }
+
+    .logosSchema {
+        width: 100;
+        height: auto;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    button {
+        width: 200px;
+    }
+
+    .logo {
+        width : 300px;
+    }
+
+    #headerText {
+        font-size: 1.4rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
