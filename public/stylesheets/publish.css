@@ -51,14 +51,6 @@ input[type=button] {
   margin-left: 5px;
 }
 
-@media (max-width: 800px) {
-  input[type=submit] {
-    margin: auto;
-    margin-top: 20px;
-    width: 300px;
-  }
-}
-
 input[type=button]:focus {
   outline-width: 0px;
 }

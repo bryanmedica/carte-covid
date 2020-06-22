@@ -24,5 +24,5 @@ $(document).ready(function() {
     $("#logoCC").click(function() {
         window.location = "/";
     });
-    
+
 });

@@ -33,14 +33,6 @@ input[type=submit]:hover {
   transition: 0.2s;
 }
 
-@media (max-width: 800px) {
-  input[type=submit] {
-    margin:auto;
-    margin-top: 20px;
-    width: 300px;
-  }
-}
-
 input[type=text]:-webkit-autofill {
   background-color: transparent !important;
 }
@@ -52,7 +44,6 @@ input[type=text]:-webkit-autofill:hover {
 input[type=text]:-webkit-autofill:focus {
   background-color: transparent !important;
 }
-
 
 .logo {
   width: 250px;

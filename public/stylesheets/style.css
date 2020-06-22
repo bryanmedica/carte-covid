@@ -75,12 +75,25 @@ footer div {
 }
 
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
 input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px rgb(27, 27, 27) inset !important;
+    -webkit-box-shadow: 0 0 0 30px rgb(30, 30, 30) inset !important;
 }
 
 input:-webkit-autofill {
   -webkit-text-fill-color: white !important;
+}
+
+@media (max-width: 800px) {
+  input[type=submit] {
+    margin: auto;
+    margin-top: 20px;
+    width: 250px;
+  }
+
+  h1, p, form {
+    padding: 0px 15px;
+  }
+
 }
